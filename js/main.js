@@ -332,7 +332,8 @@
 			con07_top = 2253
 		}
 
-
+	
+	
 	if(now_href.match('main.html')) {
 	  if(target_num != '') {
 

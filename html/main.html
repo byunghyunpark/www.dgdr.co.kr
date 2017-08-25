@@ -32,29 +32,6 @@
       <script src="js/IE9.js"></script>
     <![endif]-->
 
-  <script>
-    try {
-      function getQuerystring(paramName) {
-        var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제 
-        console.log(_tempUrl);
-        var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기 
-        console.log(_tempArray);
-        for (var i = 0; _tempArray.length; i++) {
-          var _keyValuePair = _tempArray[i].split('='); // '=' 을 기준으로 분리하기 
-          if (_keyValuePair[0] == paramName) { // _keyValuePair[0] : 파라미터 명 
-            // _keyValuePair[1] : 파라미터 값 
-            return _keyValuePair[1];
-          }
-        }
-      }
-      var f_str = getQuerystring('target_num');
-      console.log(f_str);
-    } catch (exception) {
-      var f_str = 0;
-      var target_num = 0;
-    }
-
-  </script>
 	
 
   </head>
@@ -350,14 +327,38 @@
 
    
 
-    <!-- My JS -->
-    <script src="../js/main.js"></script>
+
 
 
 	<!-- 구글 맵 API -->
 	<script async defer
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMaJwfh-LgFAChJMUkXfvFyjMOqxbBn8A&callback=initMap">
-    </script>
+</script>
 
+<script>
+      try {
+        function getQuerystring(paramName) {
+          var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제 
+          console.log(_tempUrl);
+          var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기 
+          console.log(_tempArray);
+          for (var i = 0; _tempArray.length; i++) {
+            var _keyValuePair = _tempArray[i].split('='); // '=' 을 기준으로 분리하기 
+            if (_keyValuePair[0] == paramName) { // _keyValuePair[0] : 파라미터 명 
+              // _keyValuePair[1] : 파라미터 값 
+              return _keyValuePair[1];
+            }
+          }
+        }
+        var target_num = getQuerystring('target_num');
+      } catch (exception) {
+        var f_str = 0;
+        var target_num = 0;
+      }
+      console.log("???")
+      console.log(target_num)
+  </script>
+    <!-- My JS -->
+    <script src="../js/main.js"></script>
   </body>
 </html>

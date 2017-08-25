@@ -29,10 +29,17 @@
 			}
 		}
 	});
-
+	var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제 
+	var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기 
 	// 지점 목록 스크립트
+	console.log("??", f_str)
+	if (f_str == undefined){
+		f_str = ''
+	}
+	console.log("???")
+	console.log(root_url+'/house/?city='+f_str);
 	$.ajax({
-		url:root_url+'/house/'+f_str,
+		url:root_url+'/house/?city='+f_str,
 		type:'GET',
 		dataType:'json',
 		contentType : "application/json",
@@ -128,7 +135,8 @@
 
 	//지점 필터 클릭 스크립트
 	$(document).on("click",".area_ul2 > li",function() {
-		location.href="http://d320kovphry0y7.cloudfront.net/html/all.html?f_str="+$(this).attr("f_str");
+		// location.href = "http://d320kovphry0y7.cloudfront.net/html/all.html?f_str=" + $(this).attr("f_str"); 
+		location.href = "all.html" + $(this).attr("f_str");
 	});
 
 
