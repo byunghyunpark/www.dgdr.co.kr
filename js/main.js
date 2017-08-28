@@ -1,4 +1,4 @@
-	var root_url = 'http://ec2-54-249-30-252.ap-northeast-1.compute.amazonaws.com';
+	var root_url = 'https://api.onefamily.kr';
 
 	var w_width = $(window).width();
 	var now_href = $(location).attr('href');
@@ -12,14 +12,15 @@
 
 	// logo 클릭 스크립트
 	$(".logo_header").click(function() {
-	  location.href="http://d320kovphry0y7.cloudfront.net/";
+	//   location.href="http://d320kovphry0y7.cloudfront.net/";
+		location.href = "main.html";
 	});
 
 
 	// 지점 좌표 스크립트
 	var features = '[';
 	$.ajax({
-		url:root_url+'/house/?is_immediately=false',
+		url:root_url+'/house/?is_immediately=false&is_main=true',
 		async: false,
 		type:'GET',
 		dataType:'json',
@@ -29,6 +30,7 @@
 			$.each(data, function(i, val) {
 
 				features = features + "{ position: new google.maps.LatLng("+data[i]['position']+"), type: 'dgdr', link_id:'"+data[i]['id']+"' },";
+				console.log(features);
 
 			});
 
@@ -36,7 +38,7 @@
 		}
 	});
 	$.ajax({
-		url:root_url+'/house/?is_immediately=true',
+		url: root_url +'/house/?is_immediately=true&is_main=true',
 		async: false,
 		type:'GET',
 		dataType:'json',
@@ -138,6 +140,7 @@
 
 	// 구글맵 스크립트
 	function initMap() {
+		console.log('map start');
 		var z = 12;
 		if(w_width <= 720) {
 			z = 11;
@@ -161,7 +164,7 @@
 	     });
 
 
-		var iconBase = 'http://d320kovphry0y7.cloudfront.net/images/';
+		var iconBase = '../images/';
 
 		var icons = {
 		  dgdr: {
@@ -195,7 +198,8 @@
 		  });
 
 		  marker.addListener('click', function() {
-		    location.href="http://d320kovphry0y7.cloudfront.net/html/detail.html?id="+marker.link_id;
+			// location.href="http://d320kovphry0y7.cloudfront.net/html/detail.html?id="+marker.link_id;
+			location.href = "detail.html?id=" + marker.link_id;
 	      });
 
 
@@ -239,9 +243,6 @@
 
 		}
 	});
-
-
-
 
 	// 입주 관련 문의 스크립트
 	$.ajax({
@@ -321,15 +322,15 @@
 	// 다른페이지에서 네비 클릭시
 
 		var con01_top = 122
-		var con05_top = 3115
-		var con06_top = 3535
-		var con07_top = 4383
+		var con05_top = 2950
+		var con06_top = 3370
+		var con07_top = 4220
 
 		if(w_width <= 720) {
 			con01_top = 72
-			con05_top = 1637
-			con06_top = 1888
-			con07_top = 2253
+			con05_top = 1507
+			con06_top = 1858
+			con07_top = 2223
 		}
 
 	
@@ -443,7 +444,7 @@
 		var alt = $(this).attr("alt");
 		var href = '';
 		switch(alt) {
-			case 'naver' : href = 'http://blog.naver.com/dgdr_wonfamily';
+			case 'naver' : href = 'https://blog.naver.com/dgdr_wonfamily';
 						   break;
 			case 'insta' : href = 'https://www.instagram.com/dgdr_wonfamily';
 						   break;

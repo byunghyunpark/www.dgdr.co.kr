@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="../css/main.css">
 
     <!-- font -->
-    <link rel="stylesheet" href="http://cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css">
 
 	 <!-- jQuery Insert -->
     <script src="../js/jquery-1.9.1.min.js"></script>
@@ -317,48 +317,35 @@
       </div>
     </footer>
 
-    
-    
-    
-
-
-
-    
-
-   
-
-
-
-
-	<!-- 구글 맵 API -->
-	<script async defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMaJwfh-LgFAChJMUkXfvFyjMOqxbBn8A&callback=initMap">
-</script>
-
-<script>
-      try {
-        function getQuerystring(paramName) {
-          var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제 
-          console.log(_tempUrl);
-          var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기 
-          console.log(_tempArray);
-          for (var i = 0; _tempArray.length; i++) {
-            var _keyValuePair = _tempArray[i].split('='); // '=' 을 기준으로 분리하기 
-            if (_keyValuePair[0] == paramName) { // _keyValuePair[0] : 파라미터 명 
-              // _keyValuePair[1] : 파라미터 값 
-              return _keyValuePair[1];
+    <script>
+        try {
+          function getQuerystring(paramName) {
+            var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제 
+            // console.log(_tempUrl);
+            var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기 
+            // console.log(_tempArray);
+            for (var i = 0; _tempArray.length; i++) {
+              var _keyValuePair = _tempArray[i].split('='); // '=' 을 기준으로 분리하기 
+              if (_keyValuePair[0] == paramName) { // _keyValuePair[0] : 파라미터 명 
+                // _keyValuePair[1] : 파라미터 값 
+                return _keyValuePair[1];
+              }
             }
           }
+          var target_num = getQuerystring('target_num');
+        } catch (exception) {
+          var f_str = 0;
+          var target_num = 0;
         }
-        var target_num = getQuerystring('target_num');
-      } catch (exception) {
-        var f_str = 0;
-        var target_num = 0;
-      }
-      console.log("???")
-      console.log(target_num)
-  </script>
+        // console.log("???");
+        // console.log('target_num', target_num);
+    </script>
+  
     <!-- My JS -->
     <script src="../js/main.js"></script>
+
+    <!-- 구글 맵 API -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMaJwfh-LgFAChJMUkXfvFyjMOqxbBn8A&callback=initMap"></script>
+  
   </body>
 </html>

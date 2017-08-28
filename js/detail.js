@@ -1,4 +1,4 @@
-	var root_url = 'http://ec2-54-249-30-252.ap-northeast-1.compute.amazonaws.com';
+	var root_url = 'https://api.onefamily.kr';
 
 	var w_width = $(window).width();
 
@@ -19,7 +19,7 @@
 
 	// logo 클릭 스크립트
 	$(".logo_header").click(function() {
-	  location.href="http://d320kovphry0y7.cloudfront.net/";
+	  location.href="main.html";
 	});
 
 	// top-banner 스크립트
@@ -373,7 +373,7 @@
 		var alt = $(this).attr("alt");
 		var href = '';
 		switch(alt) {
-			case 'naver' : href = 'http://blog.naver.com/dgdr_wonfamily';
+			case 'naver' : href = 'https://blog.naver.com/dgdr_wonfamily';
 						   break;
 			case 'insta' : href = 'https://www.instagram.com/dgdr_wonfamily';
 						   break;

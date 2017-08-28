@@ -1,4 +1,4 @@
-	var root_url = 'http://ec2-54-249-30-252.ap-northeast-1.compute.amazonaws.com';
+	var root_url = 'https://api.onefamily.kr';
 
 	var w_width = $(window).width();
 
@@ -9,7 +9,7 @@
 
 	// logo 클릭 스크립트
 	$(".logo_header").click(function() {
-	  location.href="http://d320kovphry0y7.cloudfront.net/";
+	  location.href="main.html";
 	});
 
 	// top-banner 스크립트
@@ -31,27 +31,44 @@
 	});
 	var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제 
 	var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기 
+	
 	// 지점 목록 스크립트
-	console.log("??", f_str)
-	if (f_str == undefined){
-		f_str = ''
+	// console.log("??", f_str)
+	// if (f_str == undefined){
+	// 	f_str = ''
+	// }
+	// console.log("???")
+	// console.log(root_url+'/house/?city='+f_str);
+	var result_url = ''
+	// console.log('f_str???', f_str);
+	if (f_str == 0 && p_str == 0) {
+		result_url = root_url + '/house/';
+		// console.log(000000);
+	} else if (f_str != 0) {
+		result_url = root_url + '/house/?city=' + f_str;
+		// console.log(111111);
+	} else if (p_str !=0 ) {
+		result_url = root_url + '/house/?province=' + p_str;
+		// console.log(222222, p_str);
 	}
-	console.log("???")
-	console.log(root_url+'/house/?city='+f_str);
+	
 	$.ajax({
-		url:root_url+'/house/?city='+f_str,
+		url:result_url,
 		type:'GET',
 		dataType:'json',
 		contentType : "application/json",
 		success:function(data){
-
-			if(f_str != '') {
-              if(f_str.match('province')) {
-			    $(".search_name").text(data[0].province);
+			// console.log('p_str???????????', p_str);
+			if(f_str != '' || p_str != '') {
+              if(p_str != '') {
+				// console.log(data[0]);
+				$(".search_name").text(data[0].province);
 			  } else {
+				// console.log(data[0]);
 				$(".search_name").text(data[0].city);
 			  }
-
+			} else {
+				$(".search_name").text('전국 전체');
 			}
 
 			$.each(data, function(i, val) {
@@ -121,8 +138,10 @@
 			  var str = '<li class="region_li" region_id="'+data[i]['id']+'">'+data[i]['name']+'</li>';
 
 			  var str3 = '<ul class="area_ul2 area_ul2_'+data[i]['id']+'"><li f_str="?province='+data[i]['id']+'">지역전체</li>';
+			//   console.log('str3', str3, data[i]['id']);
 			  $.each(data[i]['cities'], function(i2, val2) {
 				str3 = str3 + '<li cities_id="'+val2.id+'" f_str="?city='+val2.id+'">'+val2.name+'</li>';
+				// console.log('str3', str3, val2.id);
 			  });
 			  str3 = str3 + '</ul>';
 
@@ -137,6 +156,7 @@
 	$(document).on("click",".area_ul2 > li",function() {
 		// location.href = "http://d320kovphry0y7.cloudfront.net/html/all.html?f_str=" + $(this).attr("f_str"); 
 		location.href = "all.html" + $(this).attr("f_str");
+		// console.log(location.href, '$(this).attr("f_str")=', $(this).attr("f_str"))
 	});
 
 
@@ -206,7 +226,7 @@
 		var alt = $(this).attr("alt");
 		var href = '';
 		switch(alt) {
-			case 'naver' : href = 'http://blog.naver.com/dgdr_wonfamily';
+			case 'naver' : href = 'https://blog.naver.com/dgdr_wonfamily';
 						   break;
 			case 'insta' : href = 'https://www.instagram.com/dgdr_wonfamily';
 						   break;
