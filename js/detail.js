@@ -95,16 +95,16 @@
 			$(".introduction_p").html(ex_str);
 
 			//입주현황
-			$.each(data['rooms'], function(i, val){
+			$.each(data['rooms'], function (i, val) {
 				var sex = '';
 				var is_open = '';
 				var open_str = '';
-				if(val.sex == 'woman') {
+				if (val.sex == 'woman') {
 					sex = '여성전용';
 				} else {
 					sex = '남성전용';
 				}
-				if(val.is_open) {
+				if (val.is_open) {
 					is_open = 'sign';
 					open_str = '입주신청';
 				} else {
@@ -115,8 +115,9 @@
 				var month_rent = numberCommas(val.month_rent);
 				var month_manage_fee = numberCommas(val.month_manage_fee);
 				var deposit = numberCommas(val.deposit);
+				var pre_util = numberCommas(val.pre_util_charge);
 
-				var str2 = '<tr><td>'+val.name+'</td><td>'+sex+'</td><td>'+val.capacity+'인실</td><td>'+val.area+'㎡</td><td>'+month_rent+'원</td><td>'+month_manage_fee+'원</td><td>'+deposit+'원</td><td>'+val.moving_month+'</td><td><div class="'+is_open+'" room_id="'+val.id+'">'+open_str+'<i class="fa fa-angle-right"></i></div></td></tr>';
+				var str2 = '<tr><td>' + val.name + '</td><td>' + sex + '</td><td>' + val.capacity + '인실</td><td>' + val.area + '㎡</td><td>' + month_rent + '원</td><td>' + month_manage_fee + '원</td><td>' + pre_util + ' 원</td><td>' + deposit + '원</td><td>' + val.moving_month + '</td><td><div class="' + is_open + '" room_id="' + val.id + '">' + open_str + '<i class="fa fa-angle-right"></i></div></td></tr>';
 
 				$(".rooms_tb").append(str2);
 			});
