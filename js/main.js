@@ -30,7 +30,7 @@
 			$.each(data, function(i, val) {
 
 				features = features + "{ position: new google.maps.LatLng("+data[i]['position']+"), type: 'dgdr', link_id:'"+data[i]['id']+"' },";
-				console.log(features);
+				// console.log(features);
 
 			});
 
