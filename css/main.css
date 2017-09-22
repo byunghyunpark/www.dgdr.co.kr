@@ -317,8 +317,8 @@ footer .container{ height: auto; box-sizing: border-box; padding: 45px 0 45px 20
 
 .area_cBox{width: 100%; height: auto;}
 .area_left, .area_right{ float: left; }
-.area_left{ width: 520px; height: 524px; border:1px solid #d3d3d3; margin-right: 19px;}
-.area_right{ width: 380px; height: 524px; color:#242424; font-size: 16px; border: 1px solid #d3d3d3; border-top:0;}
+.area_left{ width: 57%; height: 524px; border:1px solid #d3d3d3; margin-right: 19px;}
+.area_right{ width: 40%; height: 524px; color:#242424; font-size: 16px; border: 1px solid #d3d3d3; border-top:0;}
 .area_right ul{ width: 100%; height: 174.5px;   }
 .area_right li{ padding: 5px 20px; overflow-y:auto; -ms-overflow-style: none; }
 .area_title{ border-top: 1px solid #d3d3d3; border-bottom: 1px solid #d3d3d3; background: #f5f3f1; font-weight: bold; height: 50px; line-height: 50px; }
