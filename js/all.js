@@ -1,4 +1,4 @@
-	var root_url = 'https://api.onefamily.kr';
+	var root_url = 'https://api.dgdr.co.kr';
 
 	var w_width = $(window).width();
 
