@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+
+    <title>동거동락 지점상세</title>
+
+
+    <!--bxslider-->
+    <link rel="stylesheet" href="../css/jquery.bxslider.css">
+
+    <!--font-awesome-->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+    <!--reset.css-->
+    <link rel="stylesheet" href="../css/reset.css">
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+
+    <!-- font -->
+    <link rel="stylesheet" href="https://cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css">
+
+ 
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/IE9.js"></script>
+    <![endif]-->
+  
+	<script>
+    try {
+      function getQuerystring(paramName) {
+        var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제 
+        // console.log(_tempUrl);
+        var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기 
+        // console.log(_tempArray);
+        for (var i = 0; _tempArray.length; i++) {
+          var _keyValuePair = _tempArray[i].split('='); // '=' 을 기준으로 분리하기 
+          if (_keyValuePair[0] == paramName) { // _keyValuePair[0] : 파라미터 명 
+            // _keyValuePair[1] : 파라미터 값 
+            return _keyValuePair[1];
+          }
+        }
+      }
+      var id = getQuerystring('id');
+      // console.log(id);
+    } catch (exception) {
+      var id = 1;
+    }
+
+	</script>
+
+
+  </head>
+
+  <body>
+
+     <header>
+      
+      <div class="header_top">
+        <div class="container" id="top_banner">
+        
+        </div>
+      </div>
+      <div class="header_bottom">
+        <div class="container_01">
+          <div class="logo_wrap">
+            <div class="logo_header">
+              <a href="main.html"></a>
+            </div>
+            
+            <!-- m-gnb -->
+            <div class="m-gnb">            
+              <!-- Mobile Button-->
+              <a href="#" class="mobile-btn">
+                <img src="../images/gnb_m_btn.png" alt="gnb_m_btn">
+              </a>
+            </div><!-- End : m-gnb -->
+          </div>
+
+          <div class="header_btn"><a href="landlode.html">쉐어하우스 임대운영</a></div>
+          <ul class="gnb">
+            <li><a href="#con01">ABOUT</a></li>
+            <li><a href="all.html">지점정보</a></li>
+            <li><a href="#con05">서비스</a></li>            
+            <li><a href="#con06">입주안내</a></li>
+            <li><a href="#con07">묻고답하기</a></li>
+            <li><a href="landlode.html">쉐어하우스 임대운영</a></li>
+          </ul>
+          
+        </div>        
+      </div>
+
+    </header>
+
+    <div class="contents_wrap">
+
+      <div class="dt_wrap">
+        
+        <div class="dt_con01_wrap clearfix">
+          <ul class="dt_con01_ul">
+           
+          </ul>
+          <div class="dt_con01_imgbox">
+            
+          </div>
+        </div><!--dt_con01_wrap-->
+
+        <div class="dt_con02_wrap">
+
+          <div class="dt_c2_box1">
+            <ul class="clearfix detail_tap">
+              <li class="active2" tar_num="1"><a>지점소개</a></li>
+              <li tar_num="2"><a>입주현황</a></li>
+              <li tar_num="3"><a>제공 서비스</a></li>
+              <li tar_num="4"><a>지역 소개</a></li>
+            </ul>
+          </div>
+
+          <div class="dt_c2_box2">
+            <h2>지점 소개</h2>
+            <p class="introduction_p">
+				
+            </p>            
+          </div>
+
+          <div class="dt_c2_box3">
+            <h2>입주 현황</h2>
+
+            <div class="table_wrap">
+              <table>
+              
+                <colgroup>
+                  <col width="103">
+                  <col width="103">
+                  <col width="103">
+                  <col width="103">
+                  <col width="103">
+                  <col width="103">
+                  <col width="103">
+                  <col width="103">
+                  <col width="103">
+                </colgroup>
+              
+                <tbody class="rooms_tb">
+                  <tr class="table_title">
+                    <th>이름</th>
+                    <th>성별</th>
+                    <th>타입</th>
+                    <th>면적</th>
+                    <th>월임대료</th>
+                    <th>운영관리비</th>
+                    <th>선불공과금</th>
+                    <th>예치금</th>
+                    <th>입주가능일</th>
+                    <th>입주신청</th>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            
+            <p>- 입주신청은 입주가능일 60일 전부터 신청 가능합니다.</p>
+            <p>- 대기신청을 하시면 입주 신청이 가능한 시기에 문자로 연락을 드립니다.</p>
+          </div>
+
+          <div class="dt_c2_box4">
+            <h2>제공 서비스</h2>
+            <div class="dt_sv_wrap clearfix">
+              <div class="public">
+                <div class="sv_title">공용공간</div>
+                <ul class="common_service">
+                  
+                </ul>
+              </div>
+              <div class="my">
+                <div class="sv_title">개인공간</div>
+                <ul class='private_service'>
+                 
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="dt_c2_box5">
+            <h2>지역 소개</h2>
+            <div class="area_cBox clearfix">
+              <div class="area_left" id="map">
+                
+              </div>
+              <div class="area_right">
+                <ul class="transportation">
+                  <li class="area_title">교통 시설</li>
+                  <li class='area_text t_text'></li>
+                </ul>
+                <ul class="accessibility">
+                  <li class="area_title">대학교 접근성</li>
+                  <li class='area_text ac_text'></li>
+                </ul>
+                <ul class="amenity">
+                  <li class="area_title">편의 시설</li>
+                  <li class='area_text am_text'></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+        </div><!--dt_con02_wrap-->
+
+      </div><!--dt_wrap-->
+
+
+
+
+
+      <div id="con07" class="con_07_wrap">
+        <div class="container"> 
+          <h2>동거동락, 그것이 궁금하다!</h2>
+          <div class="info_wrap">
+            <div class="tab_wrap clearfix">
+              <div class="tab_btn tab_select" id="tab1">입주 관련 문의</div>
+              <div class="tab_btn" id="tab2">계약 관련 문의</div>
+            </div>
+            <ul class="info_ul info_ul1">
+
+            </ul>
+
+            <ul class="info_ul info_ul2">
+              
+            </ul>
+          </div>
+        </div>
+      </div><!--con_07_wrap-->   
+      
+    </div><!--contents_wrap-->
+
+
+    <footer>
+      <div class="container">
+        <div class="footer_top clearfix">
+          <ul class="footer_menu">
+            <li><a href="main.html">Home</a></li>
+            <li><a href="all.html">모든 지점 보기</a></li>
+            <li><a href="main.html#con07">자주 묻는 질문</a></li>
+            <li>
+              <img class="sns" src="../images/sns_naver.png" alt="naver">
+              <img class="sns" src="../images/sns_insta.png" alt="insta">
+              <img class="sns" src="../images/sns_facebook.png" alt="facebook">
+            </li>
+          </ul>
+          <div class="house_btn">
+            <a href="landlode.html">쉐어하우스 임대운영</a>
+          </div>
+        </div>
+        <div class="footer_top_m clearfix">
+          <ul class="footer_menu">
+            <li><a href="main.html">Home</a></li>
+            <li><a href="all.html">모든 지점 보기</a></li>
+            <li><a href="main.html#con07">자주 묻는 질문</a></li>
+          </ul>
+          <div class="footer_sns">
+            <img class="sns" src="../images/sns_naver.png" alt="naver">
+            <img class="sns" src="../images/sns_insta.png" alt="insta">
+            <img class="sns" src="../images/sns_facebook.png" alt="facebook">
+          </div>
+          <div class="house_btn">
+            <a href="landlode.html">쉐어하우스 임대운영</a>
+          </div>
+        </div>
+        <div class="footer_bottom">
+          <p><span>상호명 : (주)원패밀리</span><span>대표 : 정원준</span>사업자등록번호 : 697-88-00461</p>
+          <p><span>주소: 서울특별시 강남구 학동로 334, 303호(서림빌딩, 논현동)</span>대표번호: 070-4408-9489</p>
+          <p><span>이메일 문의  <i>help&#64;dgdr.co.kr</i></span><span>사업 및 제휴문의 <i>contact&#64;dgdr.co.kr</i></span>업무 시간 10:00~18:00
+            (주말/공휴일 휴무)</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="dt_pop_black">
+      <div class="pop_wrap">
+        <h1 class="ir">
+          동거동락로고이미지
+        </h1>
+        <h2>입주신청서 작성</h2>
+		<form id="dt_from" action="" method="POST">
+        <div class="dt_pop_form">
+          <ul class="clearfix">
+            <li>이름</li>
+            <li>
+              <input name="name" id="dt_pop_name" type="text" placeholder="이름을 입력해주세요">
+            </li>
+          </ul>
+          <ul class="clearfix">
+            <li>성별</li>
+            <li class="clearfix pop_sex">
+              <div class="tab_select gd_btn" sex="woman">여 자</div>
+              <div class="gd_btn" sex="man">남 자</div>
+			  <input type="hidden" name="sex" value="">
+            </li>
+          </ul>
+          <ul class="clearfix">
+		    <li>연락처</li>
+            <li>
+              <input name="phone_number" id="dt_pop_phone" type="text" placeholder="'-'을 제외한 숫자만 입력해주세요">
+            </li>
+          </ul>
+          <ul class="clearfix">
+            <li>이메일</li>
+            <li>
+              <input name="email" id="dt_pop_email" type="email" placeholder="이메일을 입력해주세요">
+            </li>
+          </ul>
+          <ul class="clearfix">
+            <li>지점선택</li>
+            <li class="clearfix">
+              <select name="house" class="pop_select house_name">
+                <!--option>1호점</option>
+                <option>2호점</option>
+                <option>3호점</option-->
+              </select>
+              <select name="room" class="pop_select room_name">
+                <!--option>방타입1</option>
+                <option>방타입2</option>
+                <option>방타입3</option-->
+              </select>
+            </li>
+          </ul>
+          <ul class="clearfix">
+            <li>희망 입주일</li>
+            <li>
+              <input name="moving_date" id="dt_pop_w_date" type="text" placeholder="YYYY-MM-DD로 입력하세요">
+            </li>
+          </ul>
+          <ul class="clearfix">
+            <li>추가 문의사항</li>
+            <li>
+              <textarea name="memo" cols="30" rows="10" ></textarea>
+            </li>
+          </ul>
+		  </form>
+        </div><!--dt_pop_form-->
+        <p>※입주 신청 기준 <span>24시간 내에 연락</span>을 드리며, 방문 투어 및 인터뷰 진행 후 입주 가능 여부를 알려드립니다.</p>
+        <p><input class="pop_cbox" type="checkbox">개인 정보 수집에 동의합니다.</p>        
+        <div class="dt_pop_btn" id="apply_btn">
+          입주 신청하기
+        </div>
+        <div class="pop_exit">
+          <img src="../images/exit.png" alt="exit">
+        </div>
+      </div><!--pop_wrap-->
+    </div><!--dt_pop_black-->
+    
+
+    <!-- jQuery Insert -->
+    <script src="../js/jquery-1.9.1.min.js"></script>
+
+    <!--bxslider-->
+    <script src="../js/jquery.bxslider.js"></script>
+
+    <!-- detail JS -->
+    <script src="../js/detail.js"></script>
+
+
+    <!-- 구글 맵 API -->
+	<script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAMaJwfh-LgFAChJMUkXfvFyjMOqxbBn8A&callback=initMap">
+  </script>
+
+  <!-- 네이버 애널리틱스 스크립트 -->
+  <script type="text/javascript" src="https://wcs.naver.net/wcslog.js"></script>
+  <script type="text/javascript">
+    if (!wcs_add) var wcs_add = {};
+    // wcs_add["wa"] = "3bd3a16812a33e";
+    wcs_add["wa"] = "55c9833eff00d";
+    wcs_do();
+  </script>
+  </body>
+</html>
