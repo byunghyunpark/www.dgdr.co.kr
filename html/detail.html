@@ -1,6 +1,25 @@
 <!DOCTYPE html>
 <html lang="ko">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start': new Date().getTime(),
+          event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-PRCWVHN');
+    </script>
+    <!-- End Google Tag Manager -->
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
@@ -49,13 +68,18 @@
     } catch (exception) {
       var id = 1;
     }
-
 	</script>
 
 
   </head>
 
-  <body> 
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PRCWVHN" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    
     <header>
       <div class="header_top">
         <div class="container" id="top_banner">
@@ -208,10 +232,6 @@
 
       </div><!--dt_wrap-->
 
-
-
-
-
       <div id="con07" class="con_07_wrap">
         <div class="container"> 
           <h2>동거동락, 그것이 궁금하다!</h2>
@@ -281,7 +301,7 @@
           동거동락로고이미지
         </h1>
         <h2>입주신청서 작성</h2>
-		<form id="dt_from" action="" method="POST">
+		    <form id="dt_from" action="" method="POST">
         <div class="dt_pop_form">
           <ul class="clearfix">
             <li>이름</li>
@@ -294,11 +314,17 @@
             <li class="clearfix pop_sex">
               <div class="tab_select gd_btn" sex="woman">여 자</div>
               <div class="gd_btn" sex="man">남 자</div>
-			  <input type="hidden" name="sex" value="">
+			        <input type="hidden" name="sex" value="">
             </li>
           </ul>
           <ul class="clearfix">
-		    <li>연락처</li>
+            <li>나이</li>
+            <li>
+              <input name="age" id="dt_pop_age" type="text" placeholder="나이를 입력해주세요">
+            </li>
+          </ul>
+          <ul class="clearfix">
+		        <li>연락처</li>
             <li>
               <input name="phone_number" id="dt_pop_phone" type="text" placeholder="'-'을 제외한 숫자만 입력해주세요">
             </li>

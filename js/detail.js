@@ -429,6 +429,7 @@
 	$("#apply_btn").click(function() {
 		$("#dt_from").attr("action",root_url+"/inquiry/tenant/");
 		var name = $("#dt_pop_name").val();
+		var age = $("#dt_pop_age").val();
 		var email = $("#dt_pop_email").val();
 		var phone = $("#dt_pop_phone").val();
 		var date = $("#dt_pop_w_date").val();
@@ -479,7 +480,7 @@
 		if(conf_r) {
 			/*$("#dt_from").submit();*/
 
-			var data_str = '{"name": "'+name+'","sex": "'+$(".pop_sex > .tab_select").attr("sex")+'","phone_number": "'+phone+'","email": "'+email+'","house": '+house+',"room": '+$("select[name=room]").val()+',"moving_date": "'+m_date+'","memo": "'+memo+'"}';
+			var data_str = '{"name": "' + name + '","sex": "' + $(".pop_sex > .tab_select").attr("sex") + '","age": "' + age + '","phone_number": "' + phone + '","email": "' + email + '","house": ' + house + ',"room": ' + $("select[name=room]").val() + ',"moving_date": "' + m_date + '","memo": "' + memo + '"}';
 			//alert(data_str);
 			$.ajax({
 				url:root_url+"/inquiry/tenant/",
@@ -509,6 +510,7 @@
 	// 팝업 초기화 함수
 	function class_popup() {
 		$("#dt_pop_name").val("");
+		$("#dt_pop_age").val("");
 		$("#dt_pop_email").val("");
 		$("#dt_pop_phone").val("");
 		$("#dt_pop_w_date").val("");
