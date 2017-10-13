@@ -395,14 +395,13 @@
 
       
   <script>
+    $(".ask_btn").click(function() {
+      $("html, body").animate({ scrollTop: 0 }, 0);
+      $(".land_pop_black").height($(document).height()).show();
+    });
 
-	$(".ask_btn").click(function() {
-		$("html, body").animate({ scrollTop: 0 }, 0);
-		$(".land_pop_black").height($(document).height()).show();
-	});
-
-	$(".pop_exit").click(function() {
-	  $(".land_pop_black").hide();
+    $(".pop_exit").click(function() {
+      $(".land_pop_black").hide();
     });
    
   </script>

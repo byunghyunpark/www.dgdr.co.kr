@@ -513,6 +513,7 @@
 					alert("문의 완료 되었습니다.");
 					$(".land_pop_black").hide();
 					class_popup();
+					window.location.href = "contract.html";
 				},
 				error:function(request,status,error){
 				  alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);

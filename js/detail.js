@@ -493,13 +493,12 @@
 					alert("신청 완료 되었습니다.");
 					$(".dt_pop_black").hide();
 					class_popup();
+					window.location.href = "order.html";
 				},
 				error:function(request,status,error){
 				  //alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
 				  alert("신청이 미접수되었습니다.");
 			    }
-
-
 			});
 		}
 

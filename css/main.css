@@ -22,11 +22,6 @@ header, .contents_wrap, .con_01_wrap, .con_02_wrap, .con_03_wrap, .con_04_wrap, 
 
 
 
-
-
-
-
-
 /* 개별 css */
 
 header{ position: fixed; top:0; left: 0; z-index: 999;}
@@ -451,17 +446,142 @@ span.caption_txt{ font-size: 15px; font-weight: normal; position: absolute;right
 
 
 
+/*******order*******/
 
+.order_button {
+	cursor: pointer;
+	font-size: 25px;
+	display: inline-block;
+	color: white;
+	background-color: rgba(38, 210, 129, 0.7);
+	border-radius: 10px;
+	padding: 15px 50px;
+	float: left;
+	text-align: center;
+	margin-top: 60px;
+}
 
+.back_button {
+	margin-left: 210px;
+}
+
+.main_button {
+	margin-left: 80px;
+}
+
+.con_order_wrap {
+	height: 805px;
+	background: url(../images/order.jpg) no-repeat;
+	background-size: 100%;
+	position: relative;
+}
+
+.con_order_title {
+	height: 490px;
+	color: #fff;
+}
+
+.con_order_title h1,
+.con_order_title h3 {
+	text-shadow: 0 3px 7px rgba(0, 0, 0, 0.35);
+	margin-left: 35px;
+}
+
+.con_order_title h1 {
+	height: 80px;
+	line-height: 80px;
+	font-size: 80px;
+	padding-top: 240px;
+	margin-bottom: 19px;
+	text-align: center;
+}
+
+.con_order_title h3 {
+	height: 40px;
+	padding-top: 40px;
+	line-height: 40px;
+	font-size: 40px;
+	text-align: center;
+}
+
+.wide_mid_h1 {
+	display: none;
+}
 
 
 
 /* 반응형 */
-
-
 @media screen and (max-width: 1024px){
+	/*******order*******/
 
-  /******main******/
+	.wide_max_h1 {
+		display: none;
+	}
+
+	.wide_mid_h1 {
+		display: block;
+	}
+
+	.order_button {
+		cursor: pointer;
+		font-size: 20px;
+		display: block;
+		color: white;
+		background-color: rgba(38, 210, 129, 0.7);
+		border-radius: 10px;
+		padding: 10px 0;
+		/* float: left; */
+		text-align: center;
+		width: 50%;
+	}
+
+	.back_button {
+		margin-top: 60px;
+		margin-left: 25%;
+	}
+
+	.main_button {
+		margin-top: 20px;
+		margin-left: 25%;
+	}
+
+	.con_order_wrap {
+		height: 70vh;
+		background: url(../images/order.jpg) no-repeat;
+		background-size: 200%;
+		position: relative;
+	}
+
+	.con_order_title {
+		height: 490px;
+		color: #fff;
+	}
+
+	.con_order_title h1,
+	.con_order_title h3 {
+		text-shadow: 0 3px 7px rgba(0, 0, 0, 0.35);
+		margin-left: 0;
+	}
+
+	.con_order_title h1 {
+		height: 30px;
+		line-height: 30px;
+		font-size: 30px;
+		padding-top: 60px;
+		/* margin-top: 60px; */
+		margin-bottom: 40px;
+		text-align: center;
+	}
+
+	.con_order_title h3 {
+		height: 20px;
+		padding-top: 20px;
+		line-height: 20px;
+		font-size: 20px;
+		text-align: center;
+	}
+	
+	/******main******/
 
 	/*container*/
 	.container_01{width: 100%;}
@@ -531,6 +651,13 @@ span.caption_txt{ font-size: 15px; font-weight: normal; position: absolute;right
 
 		
 	.contents_wrap{ margin-top: 72px; }
+
+	/* con_08_wrap */
+	.con_08_wrap {
+		height: auto;
+		background-position: left 70% top 50%;
+		background: url(../images/order.jpg) 50% 50% no-repeat;
+	}
 
 	/*con_01_wrap*/	
 	.con_01_wrap{ height: auto; background-position: left 70% top 50%; background: url(../images/con01_bg_s.jpg) 50% 50% no-repeat; }
@@ -824,19 +951,9 @@ span.caption_txt{ font-size: 15px; font-weight: normal; position: absolute;right
 .footer_bottom p{line-height: 20px; font-size: 10px; }
 
 
-
-
-
-
 /* .dt_con01_imgbox { box-sizing: border-box; } */
 .dt_con01_wrap { box-sizing: border-box; }
 .dt_con02_wrap { box-sizing: border-box; }
 
 
 }
-
-
-
-
-
-
