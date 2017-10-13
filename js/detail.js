@@ -490,7 +490,7 @@
 				contentType : "application/json",
 
 				success:function(data){
-					alert("신청 완료 되었습니다.");
+					// alert("신청 완료 되었습니다.");
 					$(".dt_pop_black").hide();
 					class_popup();
 					window.location.href = "order.html";
