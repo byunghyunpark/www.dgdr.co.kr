@@ -20,16 +20,16 @@
 	// 지점 좌표 스크립트
 	var features = '[';
 	$.ajax({
-		url:root_url+'/house/?is_immediately=false&is_main=true',
+		url:root_url+'/house/?is_immediately=true&is_main=true',
 		async: false,
 		type:'GET',
 		dataType:'json',
 		contentType : "application/json",
 		success:function(data){
-
+			console.log('data', data);
 			$.each(data, function(i, val) {
 
-				features = features + "{ position: new google.maps.LatLng("+data[i]['position']+"), type: 'dgdr', link_id:'"+data[i]['id']+"' },";
+				features = features + "{ position: new google.maps.LatLng("+data[i]['position']+"), type: 'dgdr_f', link_id:'"+data[i]['id']+"' },";
 				// console.log(features);
 
 			});
@@ -38,22 +38,23 @@
 		}
 	});
 	$.ajax({
-		url: root_url +'/house/?is_immediately=true&is_main=true',
+		url: root_url +'/house/?is_immediately=false&is_main=true',
 		async: false,
 		type:'GET',
 		dataType:'json',
 		contentType : "application/json",
 		success:function(data){
-
+			console.log('data', data);
 			$.each(data, function(i, val) {
 
-				features = features + "{ position: new google.maps.LatLng("+data[i]['position']+"), type: 'dgdr_f', link_id:'"+data[i]['id']+"' },";
+				features = features + "{ position: new google.maps.LatLng("+data[i]['position']+"), type: 'dgdr', link_id:'"+data[i]['id']+"' },";
 
 			});
 
 			features = features.substr( 0, features.length-1 );
 			features = features + "]";
 			//alert(features);
+			console.log('features!!!', features)
 		}
 	});
 
@@ -193,23 +194,25 @@
 		  var marker = new google.maps.Marker({
 			position: feature.position,
 			icon: icons[feature.type].icon,
+			optimized: false,
+			zIndex: 99999999,
 			link_id: feature.link_id,
 			map: map
 		  });
-
+		  
 		  marker.addListener('click', function() {
 			// location.href="http://d320kovphry0y7.cloudfront.net/html/detail.html?id="+marker.link_id;
 			location.href = "detail.html?id=" + marker.link_id;
 	      });
-
-
-
 		}
 
-
 		features = eval("("+features+")");
+		console.log('111', features);
+		features.reverse()
+		console.log('222', features);
 
 		for (var i = 0, feature; feature = features[i]; i++) {
+			// console.log('feature', feature);
           addMarker(feature);
         }
 
