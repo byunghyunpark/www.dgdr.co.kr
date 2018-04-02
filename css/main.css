@@ -72,16 +72,25 @@ li.gnb_seclect a{ color: #26d281; }
 
 .contents_wrap{ margin-top:122px; }
 
-.con_01_wrap{ height: 805px; background: url(../images/con01_bg.png) 50% 50% no-repeat; position: relative;}
-.con01_title{ height: 490px; color:#fff; }
+.con_01_wrap{ height: 805px; background: url(../images/con01_bg_1.png) 50% 50% no-repeat; position: relative;}
+/* .con01_title{ height: 490px; color:#fff; }
 .con01_title h1, .con01_title h3{ text-shadow: 0 3px 7px rgba(0,0,0, 0.35); margin-left: 35px; }
 .con01_title h1{ height: 53px; line-height: 53px; font-size: 53px; padding-top: 170px; margin-bottom: 19px;  }
-.con01_title h3{ height: 27px; line-height: 27px; font-size: 27px;  }
+.con01_title h3{ height: 27px; line-height: 27px; font-size: 27px;  } */
+.con01_title{ height: 350px; margin-left: 228px; padding-top: 138px; }
+.con01_title h3{ font-size: 22px; height: 22px; line-height: 22px; margin-bottom: 17px;}
+.con01_title h3, .con01_title h1{ color: #434343; }
+.con01_title h1{ font-size: 50px; letter-spacing: -3px; height: 50px;  line-height: 50px;   }
+.con01_title h1:nth-of-type(1){ margin-bottom: 13px; }
+.con01_title span{ background: #d14200; color: #fff; padding: 2px 11px; margin-right: 7px; opacity: 0.9;}
+.land_caption{ background: rgba(83,50,0,0.72); }
+.about h3{ font-size: 30px; height: 22px; line-height: 22px; margin-bottom: 17px; color: white; text-align: center; font-weight: 300}
+
 
 .con01_caption{ width: 1400px; height: 317px; position: absolute; bottom:0; background-color: rgba(0,30,20,0.8); }
 .con01_caption .container{ height: 317px; box-sizing: border-box; padding-top:50px; }
 .logo_banner{ width: 160px;height: 147px; margin-left: 35px; margin-top: 40px; float: left;}
-.con01_caption-txt{ width: 530px;height: auto;  float: left; margin-left: 80px; color: #fff;}
+.con01_caption-txt{ width: 530px; height: auto;  float: left; margin-left: 80px; color: #fff;}
 .con01_caption-txt h2{ text-indent: 45px; height: 30px;line-height: 30px; font-size: 30px; margin-bottom: 40px; display: none; }
 .con01_caption-txt p{ line-height: 24px; font-size: 16px; margin-top:40px;}
 
@@ -636,7 +645,7 @@ span.caption_txt{ font-size: 15px; font-weight: normal; position: absolute;right
 	}
 
 	/*con_01_wrap*/	
-	.con_01_wrap{ height: auto; background-position: left 70% top 50%; background: url(../images/con01_bg_s.jpg) 50% 50% no-repeat; }
+	.con_01_wrap{ height: auto; background-position: left 70% top 50%; background: url(../images/con01_bg_s_1.png) 50% 50% no-repeat; }
 	.logo_header{ width: 88px; height: 24px; background: url(../images/logo_header_s.png) 0 0 no-repeat; margin-bottom: 12px;}	
 	.logo_header a{ width: 88px;	height: 24px; }
 	.logo_banner{display: none;}
@@ -645,6 +654,7 @@ span.caption_txt{ font-size: 15px; font-weight: normal; position: absolute;right
 	.con01_caption .container{ padding:25px 20px;  height: auto;}
 	.con01_caption-txt{ width: 100%; margin-left: 0px; }
 	.con01_caption-txt h2{ height: 16px;line-height: 16px;font-size: 16px; margin-bottom:20px; text-indent: 0; text-align: center; display: block;}
+	.about h3{ font-size: 30px; height: 22px; line-height: 22px; margin-bottom: 17px; color: white; text-align: center; font-weight: 300; display: none;}
 	.con01_caption-txt p{ font-size: 12px; line-height: 18px; margin-top:0px;}
 
 	/*con_02_wrap*/
