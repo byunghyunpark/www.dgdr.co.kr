@@ -284,6 +284,8 @@
 		}
 
 		var con01 = $("#con01").offset();
+		var con02 = $("#con02").offset();
+		var con03 = $("#con03").offset();
 		var con05 = $("#con05").offset();
 		var con06 = $("#con06").offset();
 		var con07 = $("#con07").offset();
@@ -302,6 +304,18 @@
 							  break;
 				case '묻고답하기' : $("html, body").animate({ scrollTop: (con07.top-r_margin) }, 1000);
 								break;
+			}
+		} else if (now_href.match('management.html')) {
+			var target_str = $(this).text();
+			console.log('target str', target_str)
+
+			switch (target_str) {
+				case 'ABOUT': $("html, body").animate({ scrollTop: (con01.top - r_margin) }, 1000);
+					break;
+				case '서비스': $("html, body").animate({ scrollTop: (con02.top - r_margin) }, 1000);
+					break;
+				case '문의하기': $("html, body").animate({ scrollTop: (con03.top - r_margin) }, 1000);
+					break;
 			}
 		} else {
 			var target_str = $(this).text();
