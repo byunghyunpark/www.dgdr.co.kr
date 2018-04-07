@@ -30,8 +30,8 @@ header{ position: fixed; top:0; left: 0; z-index: 999;}
 .header_bottom{ width: 100%; background-color: #0a0a0a;}
 .header_bottom .container_01{ width: 1025px;  height: 74px; line-height: 74px;}
 .logo_wrap{ width: 100%; height: auto; margin: 0 auto;}
-.logo_header{ width: 183px; height: 50px; margin-top: 12px; float: left; cursor: pointer;background: url(../images/logo_header.png) 0 0 no-repeat;}
-.logo_header a{ width: 138px;	height: 50px;	display: block; }
+.logo_header{ width: 183px; height: 50px; margin-top: 12px; float: left; cursor: pointer; background: url(../images/logo_header.png) 0 0 no-repeat;}
+.logo_header a{ width: 138px; height: 50px; display: block; }
 
 /*mobile-btn*/
 .m-gnb{
