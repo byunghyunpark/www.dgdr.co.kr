@@ -544,3 +544,69 @@
 	$(window).scroll(function(){
 	  $(".act").slideUp();
 	});
+
+	//임대관리 문의하기 버튼 클릭시 스크립트
+	$("#management_btn").click(function() {
+		$("#ld_form").attr("action",root_url+"/inquiry/management/");
+		var name = $("#ld_pop_name").val();
+		var phone = $("#ld_pop_phone").val();
+		var addr = $("#ld_pop_addr").val();
+		var pop_cbox = $(".pop_cbox").is(":checked") ;
+		var alert_num = '';
+
+		 if(pop_cbox) {
+			if( addr == '' ) {
+				alert_num = '4';
+				if(phone == '') {
+					alert_num = '3';
+					if(name == '') {
+						alert_num = '1';
+
+					}
+				}
+			};
+		} else {
+			alert_num = '5';
+		};
+
+		switch(alert_num) {
+			case '1' : alert("이름을 입력 해 주세요.");
+					   return;
+					  break;
+			case '3' : alert("연락처를 입력 해 주세요.");
+					   return;
+					  break;
+			case '4' : alert("주소를 입력 해 주세요.");
+					   return;
+					  break;
+			case '5' : alert("개인 정보 수집에 동의해주세요.");
+					   return;
+					  break;
+		}
+
+		var conf_r = confirm("문의 하시겠습니까?");
+		if(conf_r) {
+			/*$("#ld_form").submit();*/
+
+			var data_str = '{ "name": "'+name+'", "phone_number": "'+phone+'", "email": null, "address": "'+addr+'", "memo": null, "inquiry_route": null }';
+
+			$.ajax({
+				url:root_url+'/inquiry/management/',
+				type:'POST',
+				data:data_str,
+				dataType:'json',
+				contentType : "application/json",
+
+				success:function(data){
+					alert("문의 완료 되었습니다.");
+					$(".land_pop_black").hide();
+					class_popup();
+					window.location.href = "contract.html";
+				},
+				error:function(request,status,error){
+				  alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+			    }
+			});
+
+		}
+	});
