@@ -310,11 +310,11 @@
 			console.log('target str', target_str)
 
 			switch (target_str) {
-				case 'ABOUT': $("html, body").animate({ scrollTop: (con01.top - r_margin) }, 1000);
+				case 'ABOUT': $("html, body").animate({ scrollTop: (con01.top - 70) }, 1000);
 					break;
-				case '서비스': $("html, body").animate({ scrollTop: (con02.top - r_margin) }, 1000);
+				case '서비스': $("html, body").animate({ scrollTop: (con02.top - 70) }, 1000);
 					break;
-				case '문의하기': $("html, body").animate({ scrollTop: (con03.top - r_margin) }, 1000);
+				case '문의하기': $("html, body").animate({ scrollTop: (con03.top - 70) }, 1000);
 					break;
 			}
 		} else {
