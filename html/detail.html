@@ -53,28 +53,38 @@
       <script src="js/IE9.js"></script>
     <![endif]-->
   
-	<script>
-    try {
-      function getQuerystring(paramName) {
-        var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제 
-        // console.log(_tempUrl);
-        var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기 
-        // console.log(_tempArray);
-        for (var i = 0; _tempArray.length; i++) {
-          var _keyValuePair = _tempArray[i].split('='); // '=' 을 기준으로 분리하기 
-          if (_keyValuePair[0] == paramName) { // _keyValuePair[0] : 파라미터 명 
-            // _keyValuePair[1] : 파라미터 값 
-            return _keyValuePair[1];
+    <script>
+      try {
+        function getQuerystring(paramName) {
+          var _tempUrl = window.location.search.substring(1); //url에서 처음부터 '?'까지 삭제 
+          // console.log(_tempUrl);
+          var _tempArray = _tempUrl.split('&'); // '&'을 기준으로 분리하기 
+          // console.log(_tempArray);
+          for (var i = 0; _tempArray.length; i++) {
+            var _keyValuePair = _tempArray[i].split('='); // '=' 을 기준으로 분리하기 
+            if (_keyValuePair[0] == paramName) { // _keyValuePair[0] : 파라미터 명 
+              // _keyValuePair[1] : 파라미터 값 
+              return _keyValuePair[1];
+            }
           }
         }
+        var id = getQuerystring('id');
+        // console.log(id);
+      } catch (exception) {
+        var id = 1;
       }
-      var id = getQuerystring('id');
-      // console.log(id);
-    } catch (exception) {
-      var id = 1;
-    }
-	</script>
+    </script>
 
+    <!-- 공통 적용 스크립트 , 모든 페이지에 노출되도록 설치. 단 전환페이지 설정값보다 항상 하단에 위치해야함 -->
+    <script type="text/javascript" src="https://wcs.naver.net/wcslog.js">
+    </script>
+    <script type="text/javascript">
+      if (!wcs_add) var wcs_add = {};
+      wcs_add["wa"] = "s_471472645933";
+      if (!_nasa) var _nasa = {};
+      wcs.inflow();
+      wcs_do(_nasa);
+    </script>
 
   </head>
 
