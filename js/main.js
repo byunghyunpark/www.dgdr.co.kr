@@ -13,7 +13,7 @@
 	// logo 클릭 스크립트
 	$(".logo_header").click(function() {
 	//   location.href="http://d320kovphry0y7.cloudfront.net/";
-		location.href = "main.html";
+		location.href = "index.html";
 	});
 
 
@@ -107,11 +107,11 @@
 					open_st = 'txt_right';
 					li_class = 'con03_content';
 					back_img = data[i]['main_photo'];
-					href_str = "detail.html?id="+data[i]['id'];
+					href_str = "./html/detail.html?id="+data[i]['id'];
 				} else {
 					open_st = 'txt_right txt_right_no';
 					li_class = 'con03_content_no';
-					back_img = '/images/close.png';
+					back_img = '../images/close.png';
 					ready_str = "<p>"+data[i]['opened_date_char']+"</p>";
 					href_str = "#";
 				}
@@ -165,7 +165,7 @@
 	     });
 
 
-		var iconBase = '../images/';
+		var iconBase = './images/';
 
 		var icons = {
 		  dgdr: {
@@ -202,7 +202,7 @@
 		  
 		  marker.addListener('click', function() {
 			// location.href="http://d320kovphry0y7.cloudfront.net/html/detail.html?id="+marker.link_id;
-			location.href = "detail.html?id=" + marker.link_id;
+			location.href = "./html/detail.html?id=" + marker.link_id;
 	      });
 		}
 
@@ -292,23 +292,26 @@
 
 		var now_href = $(location).attr('href');
 
-		if(now_href.match('main.html')) {
-			var target_str = $(this).text();
+		if(now_href.match('index.html')) {
+			var target_str = $(this).text().substring(7).slice(0,-6);
 
 			switch(target_str) {
 				case 'ABOUT' : $("html, body").animate({ scrollTop: (con01.top-r_margin) }, 1000);
+				console.log('ABOUT1')
 							  break;
 				case '서비스' : $("html, body").animate({ scrollTop: (con05.top-r_margin) }, 1000);
+				console.log('서비스1')
 							  break;
 				case '입주안내' : $("html, body").animate({ scrollTop: (con06.top-r_margin) }, 1000);
+				console.log('입주안내1')
 							  break;
 				case '묻고답하기' : $("html, body").animate({ scrollTop: (con07.top-r_margin) }, 1000);
+				console.log('묻고답하기1')
 								break;
 			}
+			console.log('-1', target_str, target_str.length);
 		} else if (now_href.match('management.html')) {
 			var target_str = $(this).text();
-			console.log('target str', target_str)
-
 			switch (target_str) {
 				case 'ABOUT': $("html, body").animate({ scrollTop: (con01.top - 70) }, 1000);
 					break;
@@ -321,13 +324,13 @@
 			var target_str = $(this).text();
 
 			switch(target_str) {
-				case 'ABOUT' : location.href="main.html?target_num=1";
+				case 'ABOUT' : location.href="index.html?target_num=1";
 							  break;
-				case '서비스' : location.href="main.html?target_num=5";
+				case '서비스' : location.href="index.html?target_num=5";
 							  break;
-				case '입주안내' : location.href="main.html?target_num=6";
+				case '입주안내' : location.href="index.html?target_num=6";
 							  break;
-				case '묻고답하기' : location.href="main.html?target_num=7";
+				case '묻고답하기' : location.href="index.html?target_num=7";
 								break;
 			}
 
@@ -352,7 +355,7 @@
 
 	
 	
-	if(now_href.match('main.html')) {
+	if(now_href.match('index.html')) {
 	  if(target_num != '') {
 
 		switch(target_num) {

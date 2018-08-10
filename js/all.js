@@ -9,7 +9,7 @@
 
 	// logo 클릭 스크립트
 	$(".logo_header").click(function() {
-	  location.href="main.html";
+	  location.href="../index.html";
 	});
 
 	// top-banner 스크립트
@@ -98,7 +98,7 @@
 				} else {
 					open_st = 'txt_right txt_right_no';
 					li_class = 'con03_content_no';
-					back_img = '/images/close.png';
+					back_img = '../images/close.png';
 					ready_str = "<p>"+data[i]['opened_date_char']+"</p>";
 				}
 
@@ -179,9 +179,10 @@
 
 		var now_href = $(location).attr('href');
 
-		if(now_href.match('main.html')) {
+		if(now_href.match('../index.html')) {
 			var target_str = $(this).text();
-
+			
+			console.log('1')
 			switch(target_str) {
 				case 'ABOUT' : $("html, body").animate({ scrollTop: (con01.top-r_margin) }, 300);
 							  break;
@@ -194,15 +195,15 @@
 			}
 		} else {
 			var target_str = $(this).text();
-
+			console.log('-1', target_str, target_str.length);
 			switch(target_str) {
-				case 'ABOUT' : location.href="main.html?target_num=1";
+				case 'ABOUT' : location.href="../index.html?target_num=1";
 							  break;
-				case '서비스' : location.href="main.html?target_num=5";
+				case '서비스' : location.href="../index.html?target_num=5";
 							  break;
-				case '입주안내' : location.href="main.html?target_num=6";
+				case '입주안내' : location.href="../index.html?target_num=6";
 							  break;
-				case '묻고답하기' : location.href="main.html?target_num=7";
+				case '묻고답하기' : location.href="../index.html?target_num=7";
 								break;
 			}
 

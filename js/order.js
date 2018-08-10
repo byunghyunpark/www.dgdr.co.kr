@@ -13,7 +13,7 @@ var r_margin = c_margin;									/* 실제 적용될 margin-top 값 */
 // logo 클릭 스크립트
 $(".logo_header").click(function () {
     //   location.href="http://d320kovphry0y7.cloudfront.net/";
-    location.href = "main.html";
+    location.href = "../index.html";
 });
 
 
@@ -53,7 +53,7 @@ $(".gnb > li").click(function () {
 
     var now_href = $(location).attr('href');
 
-    if (now_href.match('main.html')) {
+    if (now_href.match('index.html')) {
         var target_str = $(this).text();
 
         switch (target_str) {
@@ -70,13 +70,13 @@ $(".gnb > li").click(function () {
         var target_str = $(this).text();
 
         switch (target_str) {
-            case 'ABOUT': location.href = "main.html?target_num=1";
+            case 'ABOUT': location.href = "../index.html?target_num=1";
                 break;
-            case '서비스': location.href = "main.html?target_num=5";
+            case '서비스': location.href = "../index.html?target_num=5";
                 break;
-            case '입주안내': location.href = "main.html?target_num=6";
+            case '입주안내': location.href = "../index.html?target_num=6";
                 break;
-            case '묻고답하기': location.href = "main.html?target_num=7";
+            case '묻고답하기': location.href = "../index.html?target_num=7";
                 break;
         }
 
@@ -100,7 +100,7 @@ if (w_width <= 720) {
 }
 
 
-if (now_href.match('main.html')) {
+if (now_href.match('../index.html')) {
     if (target_num != '') {
 
         switch (target_num) {
